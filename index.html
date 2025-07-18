@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="嘉苑教育 - 专业家校联动服务平台，关注学生学业与身心健康">
+    <meta name="keywords" content="家校联动,教育服务,学生成长,学业支持">
+    <title>嘉苑教育 - 家校联动服务平台</title>
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800" as="image">
+    
+    <!-- 字体图标CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- 外部CSS样式 -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 内联关键CSS -->
+    <style>
+        /* 关键渲染路径CSS - 首屏样式 */
+        :root {
+            --primary: #3a7bd5;
+            --secondary: #00d2ff;
+            --accent: #f7b42c;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+            --font-title: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            --font-body: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow-x: hidden;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo h1 {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        /* 关键首屏样式 */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 5% 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-text h2 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-text h2 span {
+            color: var(--primary);
+            display: block;
+        }
+        
+        /* 首屏加载动画 */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap" style="font-size: 32px; color: var(--primary);"></i>
+                <h1>嘉苑教育</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#pricing">会员服务</a>
+                <a href="#services">基础服务</a>
+                <a href="#premium">增值服务</a>
+                <a href="#process">入会流程</a>
+            </nav>
+            <a href="#contact" class="cta-contact">添加微信咨询</a>
+        </div>
+    </header>
+
+    <!-- 主视觉区域 -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>助力家校联动<br><span>关注学生学业与身心健康</span></h2>
+                <p>嘉苑教育提供专业家校联动服务，建立学生成长档案，跟踪学业发展，关注身心健康，实现全方位教育支持。</p>
+                
+                <a href="#pricing" class="cta-contact">了解会员服务</a>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">服务家庭</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">96%</div>
+                        <div class="stat-label">满意率</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">7天</div>
+                        <div class="stat-label">快速入会</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="image-card">
+                    <!-- 优化图片加载 -->
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800" alt="家校联动">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 定价区域 -->
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <h2>会员价格方案</h2>
+            <p>选择合适方案，享受专业家校联动服务</p>
+        </div>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <div class="pricing-name">月度会员</div>
+                    <div class="pricing-price">¥600<small>/月</small></div>
+                    <div class="pricing-duration">灵活选择，按月缴费</div>
+                </div>
+                
+                <div class="pricing-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <div class="feature-text">完整基础服务内容</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <div class="feature-text">增值服务按次收费</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <div class="feature-text">每月自动续费机制</div>
+                    </div>
+                </div>
+                
+                <div class="pricing-footer">
+                    <a href="#contact" class="pricing-cta">立即加入</a>
+                </div>
+            </div>
+            
+            <div class="pricing-card" >
+                <div class="pricing-header" style="background: linear-gradient(to right, #ff8c00, #ffd700);">
+                    <div class="pricing-name">半年制会员</div>
+                    <div class="pricing-price">¥500<small>/月</small></div>
+                    <div class="pricing-duration">超值9折优惠</div>
+                    <div class="pricing-discount">增值服务88折</div>
+                </div>
+                
+                <div class="pricing-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-star"></i></div>
+                        <div class="feature-text">完整基础服务内容</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-star"></i></div>
+                        <div class="feature-text">增值服务88折优惠</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-star"></i></div>
+                        <div class="feature-text">赠送2次服务升级</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-star"></i></div>
+                        <div class="feature-text">每月专属家长课堂</div>
+                    </div>
+                </div>
+                
+                <div class="pricing-footer">
+                    <a href="#contact" class="pricing-cta" style="background: linear-gradient(to right, #ff8c00, #ffd700);">热销推荐</a>
+                </div>
+            </div>
+            
+            <div class="pricing-card" >
+                <div class="pricing-header" style="background: linear-gradient(to right, #ff8c00, #ffd700);">
+                    <div class="pricing-name">年制会员</div>
+                    <div class="pricing-price">¥400<small>/月</small></div>
+                    <div class="pricing-duration">超值8折优惠</div>
+                    <div class="pricing-discount">增值服务88折+体检礼包</div>
+                </div>
+                
+                <div class="pricing-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                        <div class="feature-text">完整基础服务内容</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                        <div class="feature-text">增值服务88折优惠</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                        <div class="feature-text">赠送价值500元体检</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                        <div class="feature-text">全年免费线上咨询</div>
+                    </div>
+                </div>
+                
+                <div class="pricing-footer">
+                    <a href="#contact" class="pricing-cta" style="background: linear-gradient(to right, #ff8c00, #ffd700);">尊享方案</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 基础服务 -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>基础服务</h2>
+            <p>专为在校学生及父母设计的专属权益</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-school"></i> 校园服务</h3>
+                </div>
+                <div class="service-body">
+                    <div class="service-feature">每月1次进出校园机会</div>
+                    <div class="service-feature">每月1次医疗问询服务</div>
+                    <div class="service-feature">配备专人导诊（如需就医）</div>
+                    
+                    <div class="service-disclaimer">
+                        以上服务需提前24小时预约，特殊情况除外
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-utensils"></i> 餐饮接待</h3>
+                </div>
+                <div class="service-body">
+                    <div class="service-feature">使用学校食堂包厢宴请1次</div>
+                    <div class="service-feature">南北中区包厢随机分配</div>
+                    <div class="service-feature">茶叶店3小时免费使用权</div>
+                    <div class="service-feature">免费WiFi、茶水、空调服务</div>
+                    
+                    <div class="service-disclaimer">
+                        餐饮服务每月限额1次，需提前48小时预约
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-header">
+                    <h3><i class="fas fa-users"></i> 教育支持</h3>
+                </div>
+                <div class="service-body">
+                    <div class="service-feature">每学期安排与辅导员交流1次</div>
+                    <div class="service-feature">可指定教师进行通话或面谈</div>
+                    <div class="service-feature">新城渔排菜金≤9折优惠</div>
+                    <div class="service-feature">每学期1次商场内排挡优惠</div>
+                    
+                    <div class="service-disclaimer">
+                        教育支持服务需提前与客服专员预约时间
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 增值服务 -->
+    <section class="premium-services" id="premium">
+        <div class="premium-content">
+            <div class="premium-text">
+                <h2>增值服务</h2>
+                <p>针对半年制及以上会员提供的专属特权服务，助力学生全面成长发展</p>
+                
+                <div class="premium-grid">
+                    <div class="premium-item">
+                        <div class="premium-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3>成绩查询</h3>
+                            <p>及时获取学业进展</p>
+                        </div>
+                    </div>
+                    
+                    <div class="premium-item">
+                        <div class="premium-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div>
+                            <h3>租房指导</h3>
+                            <p>解决校园周边住宿问题</p>
+                        </div>
+                    </div>
+                    
+                    <div class="premium-item">
+                        <div class="premium-icon">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div>
+                            <h3>党团指导</h3>
+                            <p>政策解读与流程支持</p>
+                        </div>
+                    </div>
+                    
+                    <div class="premium-item">
+                        <div class="premium-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <h3>学业支持</h3>
+                            <p>补考重修与论文辅导</p>
+                        </div>
+                    </div>
+                    
+                    <div class="premium-item">
+                        <div class="premium-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h3>就业指导</h3>
+                            <p>职业规划与简历优化</p>
+                        </div>
+                    </div>
+                    
+                    <div class="premium-item">
+                        <div class="premium-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div>
+                            <h3>服务升级</h3>
+                            <p>基础服务次数增加</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="premium-text">
+                <div class="service-disclaimer" style="color: var(--dark); background: rgba(255,255,255,0.85);">
+                    <h3>服务说明</h3>
+                    <ul>
+                        <li>增值服务视具体情况报价</li>
+                        <li>月度会员：100%服务费</li>
+                        <li>半年制及以上：88%服务费</li>
+                        <li>基础服务增加：100元/次</li>
+                    </ul>
+                </div>
+                
+                <div class="service-disclaimer" style="color: var(--dark); background: rgba(255,255,255,0.85); margin-top: 1.5rem;">
+                    <h3>会员制度</h3>
+                    <ul>
+                        <li>本机构实行会员制，非会员不得享受</li>
+                        <li>每月1日明确会员名单，无续费则服务中止</li>
+                        <li>一年制及以上学员，赠送价值500元体检1次</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 流程区域 -->
+    <section class="process" id="process">
+        <div class="section-header">
+            <h2>入会流程</h2>
+            <p>四步轻松加入嘉苑教育会员体系</p>
+        </div>
+        
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>添加微信</h3>
+                <p>扫描官方二维码添加专属客服微信</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>提交信息</h3>
+                <p>提供学生基本信息及联系方式</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>身份审核</h3>
+                <p>核实学生及直系亲属身份信息</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>开通服务</h3>
+                <p>缴纳会费后立即享受会员服务</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>嘉苑教育</h3>
+                <p>专注家校联动服务，建立学校与家庭沟通桥梁，共同促进学生的全面发展与成长。</p>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>联系我们</h3>
+                <p><i class="fas fa-envelope"></i> service@jiayuanedu.com</p>
+                <p><i class="fas fa-phone"></i> 400-888-9999</p>
+                <p><i class="fas fa-map-marker-alt"></i> 上海市嘉定区嘉苑教育大厦</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="#"><i class="fab fa-qq"></i></a>
+                    <a href="#"><i class="fab fa-weibo"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2025 嘉苑教育 版权所有 | 闽ICP备324112号
+        </div>
+    </footer>
+
+    <!-- 外部JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>
